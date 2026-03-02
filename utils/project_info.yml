@@ -1,0 +1,122 @@
+Informação geral:
+  version: 1.0
+  name: Projeto de previsao de Churn
+  description: >
+    Modelo de Machine Learning desenvolvido para prever
+    cancelamento de clientes de telecomunicacoes.
+  author: Joao Miranda
+  creation_date: 2026-02-22
+  problem_type: classification
+
+Target:
+  name: Churn
+  description: Indica se o cliente cancelou o servico (Yes/No)
+  positive_class: Yes
+
+Dados:
+  dataset_name: Telco Customer Churn Dataset
+  source: Kaggle / IBM Sample Data
+  description: >
+    Dataset com informacoes demograficas, contratuais
+    e de servicos contratados por clientes.
+
+Features:
+
+  customerID:
+    description: Identificador unico do cliente
+    type: id
+
+  gender:
+    description: Genero do cliente
+    type: categorical
+
+  SeniorCitizen:
+    description: Indica se o cliente e idoso (1) ou nao (0)
+    type: binary
+
+  Partner:
+    description: Indica se possui parceiro(a)
+    type: binary
+
+  Dependents:
+    description: Indica se possui dependentes
+    type: binary
+
+  tenure:
+    description: Tempo de permanencia em meses
+    type: numeric
+    unit: months
+
+  PhoneService:
+    description: Possui servico telefonico
+    type: binary
+
+  MultipleLines:
+    description: Possui multiplas linhas
+    type: categorical
+
+  InternetService:
+    description: Tipo de servico de internet
+    type: categorical
+
+  OnlineSecurity:
+    description: Possui seguranca online
+    type: categorical
+
+  OnlineBackup:
+    description: Possui backup online
+    type: categorical
+
+  DeviceProtection:
+    description: Possui protecao de dispositivo
+    type: categorical
+
+  TechSupport:
+    description: Possui suporte tecnico
+    type: categorical
+
+  StreamingTV:
+    description: Possui streaming de TV
+    type: categorical
+
+  StreamingMovies:
+    description: Possui streaming de filmes
+    type: categorical
+
+  Contract:
+    description: Tipo de contrato
+    type: categorical
+
+  PaperlessBilling:
+    description: Utiliza faturamento digital
+    type: binary
+
+  PaymentMethod:
+    description: Metodo de pagamento
+    type: categorical
+
+  MonthlyCharges:
+    description: Valor mensal pago
+    type: numeric
+    unit: currency
+
+  TotalCharges:
+    description: Valor total pago
+    type: numeric
+    unit: currency
+
+Modelo:
+  algorithm: XGBoost
+  objective: Prever probabilidade de churn
+
+Contexto de negócio:
+  churn_definition: >
+    Considera-se churn quando o cliente cancela voluntariamente o servico.
+
+  impacto: >
+    A retencao de clientes reduz custos de aquisicao
+    e aumenta o lifetime value.
+
+  plano_de_acao: >
+    Clientes com alta probabilidade de churn podem receber
+    ofertas personalizadas ou contato preventivo.
